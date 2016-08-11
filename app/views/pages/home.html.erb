@@ -1,7 +1,10 @@
 <div class="jumbotron center">
   <h1>Bienvenido a mi aplicación</h1>
-  <p>
-    <%= link_to "Iniciar sesión", "#", class: 'btn btn-default btn-lg'%>
-    <%= link_to "Regístrate", "http://google.cl", class: 'btn btn-primary btn-lg'%>
-  </p>
+  <% if user_signed_in? %>
+  <!-- Hace algo -->
+  <% else %>
+    <p>
+      <%= link_to "Regístrate", new_user_registration_path, class: 'btn btn-primary btn-lg'%>
+    </p>
+  <% end %>
 </div>
